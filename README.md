@@ -33,7 +33,7 @@
 ### Výstupy z projektu
 1. Dvě tabulky v databázi, ze kterých se požadovaná data dají získat:
 - *t_katerina_pokorna_project_SQL_primary_final* (pro data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období – společné roky)
-- *t_katerina_pokorna_project_SQL_secondary_final* (pro dodatečná data o dalších evropských státech)
+- *t_katerina_pokorna_project_SQL_secondary_final* (tabulku s HDP, GINI koeficientem a populací dalších evropských států ve stejném období, jako primární přehled pro ČR)
 2. Sada SQL, které z připravených tabulek získají datový podklad k odpovězení na vytyčené výzkumné otázky
 3. Popis mezivýsledků (průvodní listina) a informace o výstupních datech
 
@@ -59,7 +59,9 @@
 
 ### Tvorba secondary podkladové tabulky
 
-**DOPLNIT**
+- data pocházejí z tabulky *economies*
+- zahrnuté jsou pouze roky 2006 - 2018 jako u primary tabulky
+- k filtrování pouze evropských států je použita tabulka *countries*, která zahrnuje i mapování zemí na jednotlivé kontinenty 
 
 ### Odpovědi na výzkumné otázky
 
