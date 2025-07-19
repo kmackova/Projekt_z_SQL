@@ -45,14 +45,14 @@
 - použila jsem přepočtené hodnoty mezd (calculation_code = 200, podle číselníku *czechia_payroll_calculation*)
 - použila jsem jenom data za mzdy (value_type_code = 5958, podle číselníku *czechia_payroll_value_type*), data za počty zaměstnanců jsem nezahrnovala, protože jsou neúplná
 - i když jsou data za mzdy dostupná po kvartálech, do podkladové tabulky jsem zahrnula pouze roční průměry, protože otázky jsou směřovány spíše na meziroční vývoj
-- industry_branch_code NULL znamená průměrné mzdy za všechna odvětví
+- industry_branch_code NULL znamená průměrné mzdy za všechna odvětví dohromady
 - do tabulky jsou namapovány názvy odvětví z číselníku *czechia_payroll_industry_branch*
 - číselník *czechia_payroll_unit* má pravděpodobně přehozené položky, brala jsem ho tedy v opačném pořadí
 - do podkladové tabulky jsou zahrnuta pouze data za roky 2006 - 2018 (společné období pro dostupná data za mzdy a ceny)
 
 **Data za ceny**
 - základní data za ceny pocházejí z tabulky *czechia_price*
-- mapování názvů jednotlivých kategorií potravin pochází z číselníku *czechia_price_category*
+- mapování názvů jednotlivých kategorií potravin je podle číselníku *czechia_price_category*
 - do podkladové tabulky jsem zahrnula pouze roční průměry, stejně jako u mezd
 - data jsou dostupná pro roky 2006 - 2018 (kategorie Jakostní víno bílé se v datech objevuje až od roku 2015)
 - data v detailu po regionech nejsou pro zodpovězení otázek potřeba, do podkladové tabulky jsem je tedy ani nezahrnovala (vzala jsem pouze data odpovídající region_code = NULL za celou republiku)
@@ -61,21 +61,21 @@
 
 - data pocházejí z tabulky *economies*
 - zahrnuté jsou pouze roky 2006 - 2018 jako u primary tabulky
-- k filtrování pouze evropských států je použita tabulka *countries*, která zahrnuje i mapování zemí na jednotlivé kontinenty 
+- k filtrování pouze evropských států je použita tabulka *countries*, která obsahuje i mapování zemí na jednotlivé kontinenty 
 
 ### Odpovědi na výzkumné otázky
 
 **1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?**
 
 Pokud se díváme na meziroční změny, mzdy většinou rostou. Až na výjimky - největší pokles zaznamenala oblast Peněžnictví a pojišťovnictví a to v roce 2013.
-V dlouhodobém horizontu (pokud porovnáme data za poslední a první dostupné období), mzdy rostou ve všech odvětvích.
+V dlouhodobém horizontu (pokud porovnáme data za poslední a první dostupné období) mzdy rostou ve všech odvětvích.
 
 **2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?**
 
 - první období (rok 2006): 1 212 kg chleba a 1 353 l mléka za průměrnou měsíční mzdu
 - poslední období (rok 2018): 1 322 kg chleba a 1 617 l mléka za průměrnou měsíční mzdu
 
-**3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)**
+**3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?**
 
 Ceny potravin se vyvýjely hodně nerovnoměrně. Ve sledovaném období zaznamenala téměř každá kategorie potravin jak různě vysoký meziroční nárůst, tak pokles ceny. Pokud se podíváme pouze na percentuální meziroční změny, nelze jednoznačně určit, která kategorie potravin za uvedené období zdražuje nejpomaleji.
 
@@ -93,6 +93,6 @@ Pokud porovnáváme meziroční změnu cen jednotlivých kategorií potravin s m
 
 **5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?**
 
-Máme k dispozici velice krátkou časovou řadu, z které nemůžeme odvodit nějaké silné závěry, spíše domněnky. Z předchozích výsledků víme, že ceny potravin se vyvíjejí velice nerovnoměrně a dá se očekávat, že jejich změny budou souviset i s jinými faktory než HDP, např. dostupností konkrétní potraviny, kvalitou úrody v aktuálním roce, situací v zahraničí u dovážených surovin atd. Z vizuální analýzy závislosti vývoje cen potravin a HDP toho tedy moc nevyčteme, závislost mezd a HDP by se podle grafického znázornění mohla jevit s ročním zpožděním.
+Máme k dispozici velice krátkou časovou řadu, z které nemůžeme odvodit nějaké silné závěry, spíše domněnky. Z předchozích výsledků víme, že ceny potravin se vyvíjejí velice nerovnoměrně. Dá se očekávat, že jejich změny budou souviset i s jinými faktory než HDP, např. dostupností konkrétní potraviny, kvalitou úrody v aktuálním roce, situací v zahraničí u dovážených surovin atd. Z vizuální analýzy závislosti vývoje cen potravin a HDP toho tedy moc nevyčteme, závislost mezd a HDP by se podle grafického znázornění mohla jevit s ročním zpožděním.
 
 Pokud si spočítáme korelační koeficienty, nejzajímavější se zdá právě korelace mezi HDP a mzdami zpožděnými o 1 rok (korelační koeficient asi 0.70).
