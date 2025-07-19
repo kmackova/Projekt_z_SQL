@@ -81,7 +81,7 @@ Ceny potravin se vyvýjely hodně nerovnoměrně. Ve sledovaném období zazname
 
 Dívala jsem se tedy na vývoj cen i dlouhodobě a pro každou kategorii se snažila spočítat nějakou "průměrnou" míru meziroční změny - interpolovala jsem ji z dat za první a poslední dostupné období (roky 2006 a 2018) tak, aby vycházelo, že pokud se bude cena kategorie zboží měnit každý rok touto mírou, z ceny v roce 2006 se dostane na pozorovanou cenu v roce 2018. Tuto konstantní meziroční míru změny ceny jsem pro každou kategorii spočítala jako:
 
-(cena v roce 2018 / cena v roce 2006)^(1/(2018 – 2006))
+*(cena v roce 2018 / cena v roce 2006)^(1 / (2018 – 2006))*
 
 Pro kategorii “Jakostní víno bílé” je změna počítána od roku 2015, od kdy je její cena sledována.
 
