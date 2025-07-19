@@ -16,12 +16,12 @@
 7. *czechia_price_category* – Číselník kategorií potravin, které se vyskytují v našem přehledu.
 
 **Číselníky sdílených informací o ČR:**
-1. czechia_region – Číselník krajů České republiky dle normy CZ-NUTS
-2. 2.czechia_district – Číselník okresů České republiky dle normy LAU.
+1. *czechia_region* – Číselník krajů České republiky dle normy CZ-NUTS.
+2. *czechia_district* – Číselník okresů České republiky dle normy LAU.
 
 **Dodatečné tabulky:**
-1. countries - Všemožné informace o zemích na světě, například hlavní město, měna, národní jídlo nebo průměrná výška populace.
-2. economies - HDP, GINI, daňová zátěž, atd. pro daný stát a rok.
+1. *countries* - Všemožné informace o zemích na světě, například hlavní město, měna, národní jídlo nebo průměrná výška populace.
+2. *economies* - HDP, GINI, daňová zátěž, atd. pro daný stát a rok.
 
 ### Výzkumné otázky
 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
@@ -33,8 +33,8 @@
 ### Výstupy z projektu
 1. Dvě tabulky v databázi, ze kterých se požadovaná data dají získat:
 - *t_katerina_pokorna_project_SQL_primary_final* (pro data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období – společné roky)
-- *t_katerina_pokorna_project_SQL_secondary_final* (tabulku s HDP, GINI koeficientem a populací dalších evropských států ve stejném období, jako primární přehled pro ČR)
-2. Sada SQL, které z připravených tabulek získají datový podklad k odpovězení na vytyčené výzkumné otázky
+- *t_katerina_pokorna_project_SQL_secondary_final* (tabulka s HDP, GINI koeficientem a populací dalších evropských států ve stejném období jako primární přehled pro ČR)
+2. Sada SQL, která z připravených tabulek získá datový podklad k odpovězení na vytyčené výzkumné otázky
 3. Popis mezivýsledků (průvodní listina) a informace o výstupních datech
 
 ## ŘEŠENÍ PROJEKTU
@@ -77,7 +77,7 @@ V dlouhodobém horizontu (pokud porovnáme data za poslední a první dostupné 
 
 **3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)**
 
-Ceny potravin se vyvýjely hodně nerovnoměrně. Ve sledovaném období zaznamenala každá kategorie potravin jak různě vysoký meziroční nárůst, tak pokles ceny. Pokud se podíváme pouze na percentuální meziroční změny, nelze jednoznačně určit, která kategorie potravin zdražuje nejpomaleji.
+Ceny potravin se vyvýjely hodně nerovnoměrně. Ve sledovaném období zaznamenala téměř každá kategorie potravin jak různě vysoký meziroční nárůst, tak pokles ceny. Pokud se podíváme pouze na percentuální meziroční změny, nelze jednoznačně určit, která kategorie potravin za uvedené období zdražuje nejpomaleji.
 
 Dívala jsem se tedy na vývoj cen i dlouhodobě a pro každou kategorii se snažila spočítat nějakou "průměrnou" míru meziroční změny - interpolovala jsem ji z dat za první a poslední dostupné období (roky 2006 a 2018) tak, aby vycházelo, že pokud se bude cena kategorie zboží měnit každý rok touto mírou, z ceny v roce 2006 se dostane na pozorovanou cenu v roce 2018. Tuto konstantní meziroční míru změny ceny jsem pro každou kategorii spočítala jako:
 
@@ -96,21 +96,3 @@ Pokud porovnáváme meziroční změnu cen jednotlivých kategorií potravin s m
 Máme k dispozici velice krátkou časovou řadu, z které nemůžeme odvodit nějaké silné závěry, spíše domněnky. Z předchozích výsledků víme, že ceny potravin se vyvíjejí velice nerovnoměrně a dá se očekávat, že jejich změny budou souviset i s jinými faktory než HDP, např. dostupností konkrétní potraviny, kvalitou úrody v aktuálním roce, situací v zahraničí u dovážených surovin atd. Z vizuální analýzy závislosti vývoje cen potravin a HDP toho tedy moc nevyčteme, závislost mezd a HDP by se podle grafického znázornění mohla jevit s ročním zpožděním.
 
 Pokud si spočítáme korelační koeficienty, nejzajímavější se zdá právě korelace mezi HDP a mzdami zpožděnými o 1 rok (korelační koeficient asi 0.70).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
