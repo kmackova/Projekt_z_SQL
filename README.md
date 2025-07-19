@@ -4,7 +4,7 @@
 
 Úkolem projektu je připravit podklady pro oblast dostupnosti základních potravin široké veřejnosti a odpovědět na zadané otázky týkající se tohoto tématu.
 
-### Datové sady, které je možné požít pro získání vhodného datového podkladu:
+### Datové sady, které je možné použít pro získání vhodného datového podkladu:
 
 **Primární tabulky:**
 1. *czechia_payroll* – Informace o mzdách v různých odvětvích za několikaleté období. Datová sada pochází z Portálu otevřených dat ČR.
