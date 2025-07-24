@@ -29,7 +29,7 @@ WITH price_chng AS (
 		LAST_VALUE(value) OVER (PARTITION BY category ORDER BY year ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)
 			AS last_price,
 		MIN(year) OVER (PARTITION BY category) AS min_year,
-    	MAX(year) OVER (PARTITION BY category) AS max_year
+    		MAX(year) OVER (PARTITION BY category) AS max_year
 	FROM t_katerina_pokorna_project_SQL_primary_final
 	WHERE value_type = 'price'
 )
