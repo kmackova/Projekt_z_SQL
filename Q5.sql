@@ -43,8 +43,8 @@ gdp AS (
 )
 SELECT
 	bc.category,
-	ROUND(CORR(bc.value_change, gdp.gdp_change)::numeric, 2) AS correlation,
-	ROUND(CORR(bc.lead_value_change, gdp.gdp_change)::numeric, 2) AS correlation_next_year
+	ROUND(CORR(bc.value_change, gdp.gdp_change)::NUMERIC, 2) AS correlation,
+	ROUND(CORR(bc.lead_value_change, gdp.gdp_change)::NUMERIC, 2) AS correlation_next_year
 FROM base_for_corr AS bc
 JOIN gdp
 	ON bc.year = gdp.year
