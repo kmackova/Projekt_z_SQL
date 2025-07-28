@@ -36,7 +36,7 @@ WITH price_chng AS (
 SELECT
 	category,
 	POWER(last_price/first_price, 1.0/(max_year - min_year)) - 1 AS avg_change_rate,
-	ROUND(((POWER(last_price/first_price, (1.0/(max_year - min_year))) - 1)*100)::numeric, 2)  || '%'
+	ROUND(((POWER(last_price/first_price, (1.0/(max_year - min_year))) - 1)*100)::NUMERIC, 2)  || '%'
 		AS rate_as_percent
 FROM price_chng
 ORDER BY avg_change_rate;
